@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="apple-touch-icon-precomposed" sizes="57x57" href="apple-touch-icon-57x57.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="60x60" href="apple-touch-icon-60x60.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="120x120" href="apple-touch-icon-120x120.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="76x76" href="apple-touch-icon-76x76.png" />
+	<link rel="apple-touch-icon-precomposed" sizes="152x152" href="apple-touch-icon-152x152.png" />
+
+	<link rel="icon" type="image/png" href="favicon-196x196.png" sizes="196x196" />
+	<link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
+	<link rel="icon" type="image/png" href="favicon-32x32.png" sizes="32x32" />
+	<link rel="icon" type="image/png" href="favicon-16x16.png" sizes="16x16" />
+	<link rel="icon" type="image/png" href="favicon-128.png" sizes="128x128" />
+	<link rel="icon" href="favicon.ico" />
+
+	<meta name="application-name" content="&nbsp;" />
+
+	<meta name="msapplication-TileColor" content="#FFFFFF" />
+	<meta name="msapplication-TileImage" content="mstile-144x144.png" />
+	<meta name="msapplication-square70x70logo" content="mstile-70x70.png" />
+	<meta name="msapplication-square150x150logo" content="mstile-150x150.png" />
+	<meta name="msapplication-wide310x150logo" content="mstile-310x150.png" />
+	<meta name="msapplication-square310x310logo" content="mstile-310x310.png" />
+
+	<!-- Put the sharing meta stuff in here too -->
+
+	<title>Media Elements | The Jump - Digital School</title>
+
+	<style type="text/css">
+		body {
+			/* No wider than 720px */
+			max-width: 720px;
+			/* Put'er in the middle */
+			margin: 0 auto;
+			padding: 20px 30px;
+
+			box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.17);
+		}
+
+		img,
+		picture,
+		audio,
+		video {
+			/* The media elements can be no wider than their parent */
+			max-width: 100%;
+		}
+
+		section {
+			margin: 50px 0;
+		}
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			margin: 1em 0;
+		}
+
+		h2 {
+			border-top: 2px solid;
+			padding-top: 7px;
+		}
+	</style>
+</head>
+
+<body id="thejump">
+	<header>
+		<h1>The Jump - Digital School</h1>
+	</header>
+	<main>
+		<article>
+			<h1>Media Elements</h1>
+			<p>
+				Notice the first two headers above? Are they both &lt;h1&gt; tags? If so,
+				why do you think they are a different size? Is it CSS? Or is there another reason?
+			</p>
+
+			<section>
+				<h2><code>&lt;picture&gt;</code></h2>
+
+				<h3>Single Image</h3>
+				<img src="assets/images/donut-2-6-960w.jpeg" alt="" />
+
+				<h3>Multiple Image Sizes (Responsive Image)</h3>
+				<img srcset="
+						assets/images/donut-2-6-960w.jpeg 960w,
+						assets/images/donut-2-6-800w.jpeg 800w,
+						assets/images/donut-2-6-640w.jpeg 640w,
+						assets/images/donut-2-6-480w.jpeg 480w,
+						assets/images/donut-2-6-320w.jpeg 320w" sizes="
+						(max-width: 639px) 480px,
+						(max-width: 799px) 640px,
+						(max-width: 959px) 800px,
+						960px" />
+				<!--
+					* Read-up on the sizes attribute.
+				-->
+
+				<h3>The New and <em>Preferred</em>. Multiple Sources!</h3>
+				<picture>
+					<!-- JPEG source with responsive srcset -->
+					<source type="image/jpeg" srcset="
+						assets/images/donut-2-6-960w.jpeg 960w,
+						assets/images/donut-2-6-800w.jpeg 800w,
+						assets/images/donut-2-6-640w.jpeg 640w,
+						assets/images/donut-2-6-480w.jpeg 480w,
+						assets/images/donut-2-6-320w.jpeg 320w">
+
+					<!-- webp source -->
+					<source type="image/webp" src="assets/images/donut-2-6.webp">
+
+					<!-- AVIF source -->
+					<source type="image/avif" src="assets/images/donut-2-6.avif">
+
+					<!-- The default image to load -->
+					<img src="assets/images/donut-2-6.avif" alt="A doughnut" />
+				</picture>
+			</section>
+
+			<section>
+				<h2><code>&lt;audio&gt;</code></h2>
+
+				<audio autoplay loop controls>
+					<!-- use the `get-mime script` I sent to find mime-types -->
+					<source type="audio/x-m4a" src="assets/audio/desktop-beat.m4a">
+					<source type="audio/mpeg" src="assets/audio/desktop-beat.mp3">
+					<source type="audio/ogg" src="assets/audio/desktop-beat.ogg">
+				</audio>
+			</section>
+
+			<section>
+				<h2><code>&lt;video&gt;</code></h2>
+
+				<video src="assets/video/buster_keaton_the_goat_1921.mp4" autoplay autoplay loop controls muted></video>
+
+				<!--
+					 * Try creating a .vtt file and add subtitles to the video!
+					 * (hint: add a <track> and navigate to )
+				-->
+				<!--
+					 * Try creating videos using multiple formats and
+					 * at multiple dimensions (ie. responsive) (if you can!)
+					 * (here's a half-decent website: )
+				-->
+			</section>
+		</article>
+		<aside>
+			<a href="#thejump">Back to top</a>
+		</aside>
+	</main>
+	<footer>
+		&copy; 2021
+	</footer>
+</body>
+
+</html>
