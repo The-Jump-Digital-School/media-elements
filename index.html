@@ -126,6 +126,26 @@
 					<!-- The default image to load -->
 					<img src="assets/images/donut-2-6.avif" alt="A doughnut" />
 				</picture>
+
+				<h3>Multiple Sources But Even Better...</h3>
+				<picture>
+					<!-- JPEG source with responsive srcset -->
+					<source type="image/jpeg" media="(min-width: )" srcset="
+						assets/images/donut-2-6-960w.jpeg 960w,
+						assets/images/donut-2-6-800w.jpeg 800w,
+						assets/images/donut-2-6-640w.jpeg 640w,
+						assets/images/donut-2-6-480w.jpeg 480w,
+						assets/images/donut-2-6-320w.jpeg 320w">
+
+					<!-- webp source -->
+					<source type="image/webp" src="assets/images/donut-2-6.webp">
+
+					<!-- AVIF source -->
+					<source type="image/avif" src="assets/images/donut-2-6.avif">
+
+					<!-- The default image to load -->
+					<img src="assets/images/donut-2-6.avif" alt="A doughnut" />
+				</picture>
 			</section>
 
 			<section>
@@ -147,11 +167,6 @@
 				<!--
 					 * Try creating a .vtt file and add subtitles to the video!
 					 * (hint: add a <track> and navigate to )
-				-->
-				<!--
-					 * Try creating videos using multiple formats and
-					 * at multiple dimensions (ie. responsive) (if you can!)
-					 * (here's a half-decent website: )
 				-->
 			</section>
 		</article>
